@@ -1,0 +1,10 @@
+services:
+  rust-app:
+    image: rust:latest
+    working_dir: /app
+    ports:
+      - "8080:8080" # Map container's port 8080 to host's port 8080
+    volumes:
+      - .:/app       # Mount the current directory into the container for live updates
+      # - /app/target  # Cache build artifacts
+    command: ["/bin/bash", "-c", "cargo clean && cargo build && cargo run"]

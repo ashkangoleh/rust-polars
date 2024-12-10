@@ -1,0 +1,14 @@
+[package]
+name = "polars_rust_tut"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "polars_rust_tut"
+path = "src/main.rs"
+
+[dependencies]
+polars = { version = "0.45.0", features = ["parquet","lazy", "default",  "temporal", "strings", "dtype-categorical", "dtype-date", "dtype-datetime", "dtype-duration", "dtype-time", "serde", "serde-lazy", "regex", "ndarray", "dynamic_group_by" ]}
+aws-sdk-s3 = "0.28.0" # MinIO-compatible S3 SDK
+tokio = { version = "1", features = ["full"] } # For async runtime
+duckdb = "1.1.1"
